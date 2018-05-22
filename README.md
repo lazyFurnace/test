@@ -1,2 +1,2 @@
 # test
-测试 http类型
+测试 http 类型
