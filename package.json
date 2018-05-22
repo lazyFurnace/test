@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "测试 http 类型",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liqiUser/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liqiUser/test/issues"
+  },
+  "homepage": "https://github.com/liqiUser/test#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
+  }
+}
