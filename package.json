@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "1.0.0",
+  "name": "liqi-test",
+  "version": "1.0.1",
   "description": "测试 http 类型",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^16.4.0"
   }
 }
