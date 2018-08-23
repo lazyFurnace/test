@@ -4,7 +4,7 @@
 更新  发布  输入命令 `npm publish` <br>
 更新版本  `npm version patch`
 
-
+```
 class Provider extends React.Component {
     getChildContext() {
         return {
@@ -34,6 +34,17 @@ const connect = (mapState, mapDispatch) => (WrappedComponent) => {
     class Connect extends React.Component {
         constructor(props, context) {
             super(props, context);
+            this.state = {};
+        }
+        getStore = () => {
+            this.setState({})
+        }
+        componentDidMount() {
+            const { store } = this.context.store;
+            this.unsubscribe = store.subscribe(getStore);
+        }
+        componentWillUnmount() {
+            this.unsubscribe();
         }
         render() {
             const { store } = this.context.store;
@@ -52,3 +63,4 @@ const connect = (mapState, mapDispatch) => (WrappedComponent) => {
 
     return Connect;
 }
+```
