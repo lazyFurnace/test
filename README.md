@@ -64,3 +64,26 @@ const connect = (mapState, mapDispatch) => (WrappedComponent) => {
     return Connect;
 }
 ```
+
+
+```
+function getSomething() {
+    return "something";
+}
+function testAsync() {
+    return new Promise(res => {
+		setTimeout(() => {
+			res('hahah')
+		}, 2000)
+		
+	})
+}
+
+async function test() {
+    const v1 = await getSomething();
+    const v2 = await testAsync();
+    console.log(v1, v2);
+}
+
+test();
+```
