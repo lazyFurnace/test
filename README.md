@@ -25,3 +25,11 @@ async function test() {
 
 test();
 ```
+
+8 月 27 日 起计划
+周一  白天 react 虚拟DOM 、diff
+      晚上 react-uxunk 中间件编写、代码注释补全。 
+周二  白天 react 动画库学习
+      晚上 轮播图修改
+周三  白天 python 学习  LeetCode
+      http 图解
