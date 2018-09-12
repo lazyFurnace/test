@@ -253,3 +253,50 @@ function swap(array, i, j) {
     array[i] = temp;
 }
 ```
+
+
+function quickSort(arr) {
+    quick(arr, 0, arr.length - 1);
+}
+
+function quick(arr, left, right) {
+    let index;
+
+    if (arr.length > 1) {
+        index = partition(arr, left, right);
+
+        if (left < index - 1) { //{4} 
+            quick(arr, left, index - 1); //{5} 
+        }
+        if (index < right) { //{6} 
+            quick(arr, index, right); //{7} 
+        }
+    }
+}
+
+function partition(arr, left, right) {
+    let pivot = arr[Math.floor((left + right) / 2)];
+    let i = left;
+    let j = right;
+
+    while (i <= j) {
+        while (arr[i] < pivot) { //{12} 
+            i++;
+        }
+        while (arr[j] > pivot) { //{13} 
+            j--;
+        }
+        if (i <= j) { //{14} 
+            swapQuickStort(arr, i, j); //{15} 
+            i++;
+            j--;
+        }
+    }
+    return i; //{16} 
+}
+
+function swapQuickStort(array, index1, index2) {
+    var aux = array[index1];
+    array[index1] = array[index2];
+    array[index2] = aux;
+};
