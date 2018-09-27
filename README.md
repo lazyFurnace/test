@@ -98,25 +98,25 @@ export default class App extends React.Component {
 ```
 
 
-9 月 28 日 起计划
+9 月 28 日 起计划 <br>
 
 知乎 live 
 - 前端工程师面试必备指南
 - 前端笔试题十讲(已听，做题)
 - 20道面试题帮你夯实前端基础
-Puppeteer 安装调研
+Puppeteer 安装调研 <br>
 *****
 
-9 月 29 日 起计划
+9 月 29 日 起计划 <br>
 
-简历修改
-排序算法练习
-整理 github 
-复习以前面试问题及应对面试方案
+简历修改 <br>
+排序算法练习 <br>
+整理 github  <br>
+复习以前面试问题及应对面试方案 <br>
 ****
 
-9 月 30 日 起计划
-Puppeteer 写读取书签爬虫
-整理再万博做的组件
-pwa 准备开新坑
+9 月 30 日 起计划 <br>
+Puppeteer 写读取书签爬虫 <br>
+整理再万博做的组件 <br>
+pwa 准备开新坑 <br>
 ****
