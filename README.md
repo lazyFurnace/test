@@ -24,16 +24,7 @@ async function test() {
 }
 
 test();
-```
-
-8 月 27 日 起计划
-周一  白天 react 虚拟DOM 、diff
-      晚上 react-uxunk 中间件编写、代码注释补全。 
-周二  白天 react 动画库学习
-      晚上 轮播图修改
-周三  白天 python 学习  LeetCode
-      http 图解
-      
+```  
 ```
 export default class App extends React.Component {
   constructor(props) {
@@ -105,3 +96,27 @@ export default class App extends React.Component {
   }
 }
 ```
+
+
+9 月 28 日 起计划
+
+知乎 live 
+- 前端工程师面试必备指南
+- 前端笔试题十讲(已听，做题)
+- 20道面试题帮你夯实前端基础
+Puppeteer 安装调研
+*****
+
+9 月 29 日 起计划
+
+简历修改
+排序算法练习
+整理 github 
+复习以前面试问题及应对面试方案
+****
+
+9 月 30 日 起计划
+Puppeteer 写读取书签爬虫
+整理再万博做的组件
+pwa 准备开新坑
+****
