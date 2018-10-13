@@ -11,8 +11,7 @@ function testAsync() {
   return new Promise(res => {
 		setTimeout(() => {
 			res('hahaha')
-		}, 2000)
-		
+		}, 2000);
 	})
 }
 
