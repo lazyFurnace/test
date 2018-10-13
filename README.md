@@ -9,10 +9,10 @@ function getSomething() {
 }
 function testAsync() {
   return new Promise(res => {
-		setTimeout(() => {
-			res('hahaha')
-		}, 2000);
-	})
+    setTimeout(() => {
+      res('hahaha')
+    }, 2000);
+  })
 }
 
 async function test() {
