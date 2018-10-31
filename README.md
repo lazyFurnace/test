@@ -3,7 +3,7 @@
 这个包用于各种测试或放未整理的东西...
 
 #### async & await
-```
+```js
 function getSomething() {
   return "something";
 }
@@ -27,7 +27,7 @@ test();
 
 #### react-transition-group 使用
 
-```
+```jsx
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -95,3 +95,10 @@ export default class App extends React.Component {
     );
   }
 }
+```
+
+### 计划文章
+- postMessage 介绍
+- window 启动 ubuntu 虚拟机 && nginx 代理使用介绍
+- 常用 linux 指令
+- redux 和 react-redux 源码文章
