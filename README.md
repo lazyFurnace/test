@@ -102,3 +102,21 @@ export default class App extends React.Component {
 - window 启动 ubuntu 虚拟机 && nginx 代理使用介绍
 - 常用 linux 指令
 - redux 和 react-redux 源码文章
+
+#### linux 指令
+
+- ps -ef | grep nginx 查进程
+- sudo kill -QUIT 522 杀进程
+- find /| grep nginx.conf 查找文件
+- sudo nginx 启动 nginx
+- sudo vi nginx.conf 打开看文本
+- sudo mv /mnt/d/nginx.conf ./nginx.conf 替换文件
+- cd 进入 xxx
+- mkdir xxx 创建
+- ls 看有什么
+- cp -i ./config/m.dev.huohua.cn.conf etc/nginx/servers/  拷贝
+- sudo apt-get install nginx 安装 nginx
+- /etc/nginx 位置
+- sudo nginx -s reload 重新加载
+- sudo vim m.dev.huohua.cn.conf  编辑文件
+- ll  不知道
