@@ -98,10 +98,13 @@ export default class App extends React.Component {
 ```
 
 ### 计划文章
-- postMessage 介绍
+- postMessage 介绍 finish
 - window 启动 ubuntu 虚拟机 && nginx 代理使用介绍
 - 常用 linux 指令
 - redux 和 react-redux 源码文章
+
+### 问题记录
+- canvas 回去图片 base64 问题介绍
 
 #### linux 指令
 
