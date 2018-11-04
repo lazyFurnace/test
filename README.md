@@ -104,7 +104,7 @@ export default class App extends React.Component {
 - redux 和 react-redux 源码文章
 
 ### 问题记录
-- canvas 回去图片 base64 问题介绍
+- canvas 回去图片 base64 问题介绍 finish
 
 #### linux 指令
 
