@@ -2,6 +2,9 @@
 
 这个包用于各种测试或放未整理的东西...
 
+redux-action
+https://www.jianshu.com/p/d2615a7d725e
+
 #### async & await
 ```js
 function getSomething() {
