@@ -8,7 +8,7 @@ https://www.jianshu.com/p/d2615a7d725e
 Reselect
 https://www.jianshu.com/p/6e38c66366cd
 
-redux-form redux-module
+redux-form redux-modal
 
 #### async & await
 ```js
