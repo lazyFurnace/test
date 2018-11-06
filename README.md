@@ -5,6 +5,11 @@
 redux-action
 https://www.jianshu.com/p/d2615a7d725e
 
+Reselect
+https://www.jianshu.com/p/6e38c66366cd
+
+redux-form redux-module
+
 #### async & await
 ```js
 function getSomething() {
