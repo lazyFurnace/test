@@ -10,6 +10,36 @@ https://www.jianshu.com/p/6e38c66366cd
 
 redux-form redux-modal
 
+react 注释规范
+```
+/**
+ * @typedef {Object} Avatar.props
+ * @property {boolean} [bordered=false] - Avatar has border, set true to add "bordered" class name.
+ * @property {string} [label] - Avatar aria label.
+ * @property {string} [prefix=CLASS_NAME_PREFIX] - Avatar class name prefix.
+ * @property {"circle"|"square"} [shape="circle"] - Avatar shape class name.
+ * @property {"small"|"normal"|"large"} [size="normal"] - Avatar size class name.
+ * @property {string} src - Avatar image url.
+ * @see CLASS_NAME_PREFIX
+ */
+
+/**
+ * @typedef {Object} Avatar.state
+ * @property {boolean} loading - Avatar image is loading.
+ * @property {boolean} loaded - Avatar image is loaded.
+ * @property {string} src - Avatar image resize url.
+ */
+
+/**
+ * Avatar component.
+ * @class Avatar
+ * @classdesc Avatars can be used to represent people or objects. It supports images only.
+ * @extends React.Component<Avatar.props, Avatar.state>
+ * @property {Avatar.props} props
+ * @requires module:components/media/qiniu
+ */
+```
+
 #### async & await
 ```js
 function getSomething() {
