@@ -1,5 +1,11 @@
 # test
 
+new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            }
+        }),
+
 
 node 获取本机 ip
 ```
