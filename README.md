@@ -1,5 +1,49 @@
 # test
 
+chroma
+classnames
+hammerjs
+moment
+normalizr
+reselect
+semver
+superagent
+underscore
+validate
+
+
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@static/*": [
+        "static/*"
+      ],
+      "@vendor/*": [
+        "vendor/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@utils/*": [
+        "src/untilities/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
+
 new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
