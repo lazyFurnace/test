@@ -11,7 +11,8 @@ superagent
 underscore
 validate
 
-
+jsconfig 文件能修改改变路径
+```json
 {
   "compilerOptions": {
     "target": "es2016",
@@ -43,13 +44,16 @@ validate
     "dist"
   ]
 }
+```
 
+DefinePlugin 配置 webpack
+```js
 new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-            }
-        }),
-
+    'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }
+}),
+```
 
 node 获取本机 ip
 ```
@@ -78,7 +82,7 @@ https://www.jianshu.com/p/6e38c66366cd
 redux-form redux-modal
 
 react 注释规范
-```
+```js
 /**
  * @typedef {Object} Avatar.props
  * @property {boolean} [bordered=false] - Avatar has border, set true to add "bordered" class name.
