@@ -56,7 +56,7 @@ new webpack.DefinePlugin({
 ```
 
 node 获取本机 ip
-```
+```js
 function getIPAdress(){  
     var interfaces = require('os').networkInterfaces();  
     for(var devName in interfaces){  
