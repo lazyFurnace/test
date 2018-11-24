@@ -1,5 +1,5 @@
 # test
-
+```
 chroma
 classnames
 hammerjs
@@ -10,7 +10,7 @@ semver
 superagent
 underscore
 validate
-
+```
 jsconfig 文件能修改改变路径
 ```json
 {
