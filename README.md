@@ -11,40 +11,7 @@ superagent
 underscore
 validate
 ```
-jsconfig 文件能修改改变路径
-```json
-{
-  "compilerOptions": {
-    "target": "es2016",
-    "allowSyntheticDefaultImports": false,
-    "baseUrl": "./",
-    "paths": {
-      "@static/*": [
-        "static/*"
-      ],
-      "@vendor/*": [
-        "vendor/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@utils/*": [
-        "src/untilities/*"
-      ],
-      "@constants/*": [
-        "src/constants/*"
-      ],
-      "@/*": [
-        "src/*"
-      ]
-    }
-  },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
-}
-```
+
 
 DefinePlugin 配置 webpack
 ```js
@@ -53,22 +20,6 @@ new webpack.DefinePlugin({
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }
 }),
-```
-
-node 获取本机 ip
-```js
-function getIPAdress(){  
-    var interfaces = require('os').networkInterfaces();  
-    for(var devName in interfaces){  
-          var iface = interfaces[devName];  
-          for(var i=0;i<iface.length;i++){  
-               var alias = iface[i];  
-               if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){  
-                     return alias.address;  
-               }  
-          }  
-    }  
-} 
 ```
 
 这个包用于各种测试或放未整理的东西...
