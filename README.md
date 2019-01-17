@@ -2,6 +2,7 @@
 
 ## 问题
 视频自动打开失效
+package files 属性
 
 ```
 chroma
