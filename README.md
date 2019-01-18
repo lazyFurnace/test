@@ -1,8 +1,9 @@
 # test
 
 ## 问题
-视频自动打开失效
-package files 属性
+视频自动打开失效 <br>
+package files 属性 <br>
+ejs 使用
 
 ```
 chroma
