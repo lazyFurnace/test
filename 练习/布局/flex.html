@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.parent{
+				width:500px;
+				height:5000px;
+				background:#eee;
+				display:flex;	
+				flex-direction:column-reverse;
+				justify-content:space-around;	
+				align-items:center;
+				flex-flow:wrap;	
+			}
+			.son{
+				width:50%;
+				height:50px;
+				background:#afa;
+				box-sizing:border-box;
+				border:1px solid red;
+			}
+			/* 设置滚动条的样式 */
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			/* 滚动槽 */
+			::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+				border-radius: 10px;
+			}
+			/* 滚动条滑块 */
+			::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background: rgba(0,0,0,0.1);
+				-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+			}
+			::-webkit-scrollbar-thumb:window-inactive {
+				background: rgba(255,0,0,0.4);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="son">第一个</div>
+			<div class="son">第二个</div>
+			<div class="son">第三个</div>
+			<div class="son">第四个</div>
+			<div class="son">第五个</div>
+			<div class="son">第六个</div>
+			<div class="son">第一个</div>
+			<div class="son">第二个</div>
+			<div class="son">第三个</div>
+			<div class="son">第四个</div>
+			<div class="son">第五个</div>
+			<div class="son">第六个</div>
+			<div class="son">第一个</div>
+			<div class="son">第二个</div>
+			<div class="son">第三个</div>
+			<div class="son">第四个</div>
+			<div class="son">第五个</div>
+			<div class="son">第六个</div>
+		</div>
+		<script type="text/javascript">
+    function getBase64Image(img) {
+      var canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+
+      var dataURL = canvas.getImageData("image/jpeg");
+      return dataURL
+
+      // return dataURL.replace("data:image/png;base64,", "");
+    }
+
+
+    function main() {
+      var img = document.createElement('img');
+      img.src = 'http://124.128.225.20:38080/Initial/Login.aspx?ccode=1';
+      img.onload =function() {
+        var data = getBase64Image(img);
+        console.log(data);
+      }
+
+      document.body.appendChild(img);
+    }
+
+    main()
+
+  </script>
+	</body>
+	
+</html>

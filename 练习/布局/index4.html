@@ -1,0 +1,28 @@
+<div class='parent'>
+    <div class='son1'></div>
+    <div class='son2'></div>
+</div>
+<style>
+    .parent{
+        height: 500px;
+    }
+    .son1{
+        background: #ddd;
+        height:50px;
+        width:200px;
+    }
+    .son2{
+        background: #333;
+        height:50px;
+    }
+    .son1,.son2{
+        display:inline-block;
+    }
+    /* .parent{
+        font-size:0;
+    } */
+</style>
+<script>
+    var parW = document.querySelector(".parent").clientWidth;
+    document.querySelector(".son2").style.width = parW - 200;
+</script>

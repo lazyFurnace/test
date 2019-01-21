@@ -1,0 +1,37 @@
+获取DOM节点  DOM设置属性ref   读值时用 this.refs.值
+元素设置任意属性  传值 this.props.属性名  取所有子节点用this.props.children
+验证 propType:{title:React.PropType.string.isRequired}
+默认值 getDefaultProps:function(){ return {title : "XXX"}}
+
+
+教程手册
+	https://hulufei.gitbooks.io/react-tutorial/content/
+	https://tianxiangbing.github.io/react-cn/docs/getting-started.html
+
+react中文网   https://tianxiangbing.github.io/react-cn/
+
+
+在线调试工具  https://jsfiddle.net/
+
+common.js介绍 http://javascript.ruanyifeng.com/nodejs/module.html#toc5
+
+webpack中文网 https://doc.webpack-china.org/guides/migrating/
+
+fis3 百度自动化管理工具    http://fis.baidu.com/fis3/index.html
+
+hammer.js   触屏手势库
+
+
+common js node.js的规范
+
+webpack 前端模块化打包工具  -->loder 模块资源转换器
+
+yeoman//grunt//gulp
+
+react-route   react-redux
+
+autoprefixer   css兼容工具
+
+babel js编译器 es6==>es5
+
+使用Express 安装Express  和 express-generator  -g
