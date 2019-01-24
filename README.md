@@ -3,7 +3,8 @@
 ## 问题
 视频自动打开失效 <br>
 package files 属性 <br>
-ejs 使用
+ejs 使用 <br>
+path-to-regexp
 
 ```
 chroma
