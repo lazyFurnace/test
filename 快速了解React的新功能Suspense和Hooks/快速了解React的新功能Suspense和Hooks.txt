@@ -1,0 +1,207 @@
+render phase vs. commit phase
+getDerivedStateFromError vs componentDidCatch 
+
+render phase = getDerivedStateFromError
+commit phase = componentDidCatch
+
+
+Suspense要解决的两个问题：1. 代码分片； 2. 异步获取数据。
+
+// Clock.js
+import React from "react";
+import moment from "moment";
+
+console.log("init Clock");
+
+const Clock = () => <h1>{moment().format("MMMM Do YYYY, h:mm:ss a")}</h1>;
+
+export default Clock;
+
+
+// Usage of Clock
+const Clock = React.lazy(() => {
+  console.log("start importing Clock");
+  return import("./Clock");
+});
+
+
+<Suspense>
+  { show ? <Clock/> : null}
+</Suspense>
+
+getDerivedStateFromError(error) {
+   if (isPromise(error)) {
+      error.then(reRender);
+   }
+}
+
+<Suspense fallback={<div>Loading...</div>}>
+  { show ? <Clock/> : null}
+</Suspense>
+
+
+import {unstable_createResource as createResource} from 'react-cache';
+
+const resource = createResource(functionReturnAPromise);
+
+const Foo = () => {
+  const result = resource.read();
+  return (
+    <div>{result}</div>
+  );
+};
+
+
+<Suspense>
+    <Foo />
+</Suskpense>
+
+
+https://reactjs.org/docs/hooks-reference.html
+
+
+useState
+useEffect
+useContext
+
+
+// 有状态类组件
+class Counter extends React.Component {
+    state = {
+       count: 0
+    }
+    
+    increment = () => {
+        this.setState({count: this.state.count + 1});
+    }
+    
+    render() {
+        return (
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.increment}>+</button>
+            </div>
+        );
+    }
+}
+
+// 使用useState Hook
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  
+  const increment = () => setCount(count + 1);
+  
+  return (
+    <div>
+        <h1>{count}</h1>
+        <button onClick={increment}>+</button>
+    </div>
+  );
+};
+
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  if (count % 2 === 0) {
+    const [x, setX] = useState(123);
+  }
+  const [y, setY] = useState(456);
+
+  ...
+}
+
+
+//Hooks: useEffect
+  useEffect(() => {
+    console.log('Do');
+    return () => {
+      console.log('Undo');
+    }
+  })
+
+
+// Hooks: useContext
+
+const Context = React.createContext();
+
+//以前
+const Render = (
+    <Context.Consumer>
+      {
+        (value) => {
+           return <div>{value}</div>;
+        }
+      }
+    </Context.Consumer>
+);
+    
+//现在
+const Render = () => {
+    const contextValue = useContext(Context);
+    return <div>{contextValue}</div>;
+};
+
+
+// 模拟整个生命周期中只运行一次的方法
+useMemo(() => {
+  // execute only once
+}, []);
+
+
+// 模拟shouldComponentUpdate
+const areEqual = (prevProps, nextProps) => {
+   // 返回结果和shouldComponentUpdate正好相反
+   // 访问不了state
+}; 
+React.memo(Foo, areEqual);
+
+
+// 模拟componentDidMount
+useEffect(() => {
+    // 这里在mount时执行一次
+}, []);
+
+
+// 模拟componentDidUnmount
+useEffect(() => {
+    // 这里在mount时执行一次
+    return () => {
+       // 这里在unmount时执行一次
+    }
+}, []);
+
+
+// 模拟componentDidUpdate
+const mounted = useRef();
+useEffect(() => {
+  if (!mounted.current) {
+    mounted.current = true;
+  } else {
+    // 这里只在update是执行
+  }
+});
+
+
+// Hooks之后的组件逻辑重用形态
+
+const XXXX = () => {
+  const [xx, xxx, xxxx] = useX();
+  useY();
+  const {a, b} = useZ();
+  return (
+    <>
+     //JSX
+    </>
+  );
+};
+
+
+https://usehooks.com/
+
+
+https://reactjs.org/blog/2018/11/27/react-16-roadmap.html
+
+React 16.6 with Suspense for Code Splitting (already shipped)
+A minor 16.x release with React Hooks (~Q1 2019)
+A minor 16.x release with Concurrent Mode (~Q2 2019)
+A minor 16.x release with Suspense for Data Fetching (~mid 2019)
