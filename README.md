@@ -13,12 +13,12 @@ const getSectionDate = (startDate, endDate) => {
     if (!regexpDate.test(startDate) || !regexpDate.test(endDate)) {
         throw new Error('日期格式 xxxx-xx-xx');
     }
-    const currentDate = new Date().getTime();
+    const currentTime = new Date().getTime();
     const [ startYear, startMonth, startDay ] = startDate.split('-');
     const [ endYear, endMonth, endDay ] = endDate.split('-');
     const startTime = new Date().setFullYear(startYear, startMonth - 1, startDay);
     const endTime = new Date().setFullYear(endYear, endMonth - 1, endDay);
-    if (currentDate > startTime && currentDate < endTime) {
+    if (currentTime > startTime && currentTime < endTime) {
         return true;
     } else {
         return false;
