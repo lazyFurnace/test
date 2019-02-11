@@ -7,6 +7,26 @@ package files 属性 <br>
 ejs 使用 <br>
 path-to-regexp
 
+```js
+const getSectionDate = (startDate, endDate) => {
+    const regexpDate = /^((?:19|20)\d\d)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/;
+    if (!regexpDate.test(startDate) || !regexpDate.test(endDate)) {
+        throw new Error('日期格式 xxxx-xx-xx');
+    }
+    const currentDate = new Date().getTime();
+    const [ startYear, startMonth, startDay ] = startDate.split('-');
+    const [ endYear, endMonth, endDay ] = endDate.split('-');
+    const startTime = new Date().setFullYear(startYear, startMonth - 1, startDay);
+    const endTime = new Date().setFullYear(endYear, endMonth - 1, endDay);
+    if (currentDate > startTime && currentDate < endTime) {
+        return true;
+    } else {
+        return false;
+    }
+};
+```
+
+
 ```
 chroma
 classnames
