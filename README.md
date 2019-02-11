@@ -16,8 +16,8 @@ const getSectionDate = (startDate, endDate) => {
     const currentTime = new Date().getTime();
     const [ startYear, startMonth, startDay ] = startDate.split('-');
     const [ endYear, endMonth, endDay ] = endDate.split('-');
-    const startTime = new Date().setFullYear(startYear, startMonth - 1, startDay);
-    const endTime = new Date().setFullYear(endYear, endMonth - 1, endDay);
+    const startTime = new Date(0).setFullYear(startYear, startMonth - 1, startDay);
+    const endTime = new Date(0).setFullYear(endYear, endMonth - 1, endDay);
     if (currentTime > startTime && currentTime < endTime) {
         return true;
     } else {
