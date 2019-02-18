@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      .box {
+        height: 500px;
+        width: 500px;
+        border: 1px solid red;
+      }
+    </style>
+    <title>qweasd</title>
+  </head>
+  <body>
+    <div class="box" id="mouse" style="margin-left:0px"></div>
+    <script type="text/javascript">
+      var start_X, start_Y, posi;
+      var tar = document.getElementById("mouse");
+      tar.onmousedown = function(e) {
+        posi = tar.style.marginLeft;
+        start_X = e.clientX;
+        tar.addEventListener("mousemove", listGo);
+      };
+      tar.onmouseup = function(e) {
+        tar.removeEventListener("mousemove", listGo);
+      };
+      tar.onmouseout = function() {
+        tar.removeEventListener("mousemove", listGo);
+      };
+      function listGo(e) {
+        tar.style.marginLeft = parseInt(posi) + e.clientX - start_X + "px";
+      }
+      tar.addEventListener("touchstart", function(e) {
+        posi = tar.style.marginLeft;
+        start_X = e.touches[0].pageX;
+      });
+      tar.addEventListener("touchmove", function(e) {
+        tar.style.marginLeft =
+          parseInt(posi) + e.touches[0].pageX - start_X + "px";
+      });
+    </script>
+  </body>
+</html>
