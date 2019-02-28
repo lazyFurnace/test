@@ -1,0 +1,166 @@
+## Node.js
+
+###[glob](https://github.com/isaacs/node-glob#readme)
+
+node 的 glob 模块允许你使用 \* 等符号，来写一个 glob 规则，像在 shell 里一样，获取匹配对应规则的文件。glob 工具是基于 JavaScript 的，它使用了 minimatch 库来进行匹配。
+
+#### glob（pattern，[options]，cb）
+
+- `pattern` `{String}` 要匹配的模式
+- `options` `{Object}`
+- `cb` `{Function}`
+- `err` `{Error | null}`
+- `matches` `{Array<String>}` 找到与模式匹配的文件名
+
+执行异步全局搜索。
+
+#### glob.sync（pattern，[options]）
+
+- `pattern` `{String}` 要匹配的模式
+- `options` `{Object}`
+- `return` `{Array<String>}`找到与模式匹配的文件名
+
+执行同步 glob 搜索。
+
+#### 例如
+
+读取文件夹该类型所有的文件
+
+```js
+glob.sync(pathVars.srcPath + "/pages/loginRegister/*/index.html");
+// 结果
+[
+  "F:/liqi-webStudio/src/pages/loginRegister/forgetPassword/index.html",
+  "F:/liqi-webStudio/src/pages/loginRegister/forgetPasswordEmail/index.html",
+  "F:/liqi-webStudio/src/pages/loginRegister/login/index.html",
+  "F:/liqi-webStudio/src/pages/loginRegister/register/index.html"
+];
+```
+
+## Webpack
+
+- 库类依赖使用 `webpack.DllPlugin` 整体提前打包
+- `preload-webpack-plugin` 预加载插件
+
+## React
+
+- 受控表单读取数据可使用表单 `name` + `state` 控制
+
+- 使用 `element` 作为起点，克隆并返回一个新的 React 元素。 所产生的元素将具有原始元素的 props ，新的 props 为浅层合并。 新的子元素将取代现有的子元素， `key` 和 `ref` 将被保留。
+
+- ```js
+  React.cloneElement(element, [props], [...children]);
+  ```
+
+## Javascript
+
+- `requestIdleCallback` 和 `requestAnimationFrame`
+
+- 新写法 `::` 是 `bind(this)`
+
+- 调起全屏功能
+
+- ```js
+  toggleFullScreen() {
+      const { isFullScreen } = this.state;
+      const oFullScreenDiv = document.getElementById("dashBoardLayoutFullScreenBox");
+      if (oFullScreenDiv){
+          if (!isFullScreen) {
+              if (oFullScreenDiv.requestFullscreen) {
+                  oFullScreenDiv.requestFullscreen();
+              } else if (oFullScreenDiv.mozRequestFullScreen) {
+                  oFullScreenDiv.mozRequestFullScreen();
+              } else if (oFullScreenDiv.webkitRequestFullScreen) {
+                  oFullScreenDiv.webkitRequestFullScreen();
+              } else if (oFullScreenDiv.msRequestFullScreen){
+                  oFullScreenDiv.msRequestFullScreen();
+              }
+          } else {
+              if (document.exitFullscreen) {
+                  document.exitFullscreen();
+              } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+              } else if (document.webkitCancelFullScreen) {
+                  document.webkitCancelFullScreen();
+              }
+          }
+      }
+  }
+  toggleFullScreenState() {
+      //监听不同浏览器的全屏事件，并件执行相应的代码
+      document.addEventListener("webkitfullscreenchange", () => {
+          if (document.webkitIsFullScreen) {
+              this.setState({ isFullScreen: true });
+          } else {
+              this.setState({ isFullScreen: false });
+          }
+      }, false);
+      document.addEventListener("fullscreenchange", () => {
+          if (document.fullscreen) {
+              this.setState({ isFullScreen: true });
+          } else {
+              this.setState({ isFullScreen: false });
+          }
+      }, false);
+      document.addEventListener("mozfullscreenchange", () => {
+          if (document.mozFullScreen) {
+              this.setState({ isFullScreen: true });
+          } else {
+              this.setState({ isFullScreen: false });
+          }
+      }, false);
+      document.addEventListener("msfullscreenchange", () => {
+          // ie
+          if (document.msFullscreenElement) {
+              this.setState({ isFullScreen: true });
+          } else {
+              this.setState({ isFullScreen: false });
+          }
+      }, false);
+  }
+  ```
+
+## 算法
+
+- 二分查找
+
+## 工具
+
+#### MODx
+
+MODx 是一个开源的 PHP 应用框架，可以帮助使用者控制自己的网上内容。它是开发人员和高级用户理想的控制系统，任何人都可以使用 MODx 发布、更新、维护动态网站，或 html 静态页面的网站内容。
+
+#### Typescript
+
+TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+
+#### Flow
+
+Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开源码项目，问世只有两三年，是个相当年轻的项目。简单来说，它是对比 TypeScript 语言的解决方式。
+
+#### 网站
+
+- [MDN - Web 开发者文档](https://developer.mozilla.org/zh-CN/)
+- [维基百科](https://www.wikipedia.org/)
+- [绘图软件](https://affinity.serif.com/zh-cn/designer/)
+
+## Linux
+
+连接远程 Linux `ssh 192.168...`
+
+## CSS
+
+- 计算属性 `height: calc( ~"100% - 40px")`
+
+- 粘性布局 `position: sticky`
+
+- 这三个属性搭配对付 table 的宽度问题有奇效
+
+- ``` css
+  width: 140px;
+  min-width: 140px;
+  word-break: break-all;
+  ```
+
+- `:last-of-type` 选择器
+- `prefixfree.js` 增加 css 各种后缀
