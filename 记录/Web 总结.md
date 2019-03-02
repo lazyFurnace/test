@@ -120,6 +120,12 @@ glob.sync(pathVars.srcPath + "/pages/loginRegister/*/index.html");
   }
   ```
 
+
+- 字符串去除两边的空格用 `trim()`
+- 使用 js 添加 css 属性时后面注意加上单位
+- `introduce` 可用于判断原型链
+- 一个循环数字可使用模赋值运算 `%` 来控制循环数字大小
+
 ## 算法
 
 - 二分查找
