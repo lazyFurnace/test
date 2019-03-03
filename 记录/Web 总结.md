@@ -1,6 +1,6 @@
 ## Node.js
 
-###[glob](https://github.com/isaacs/node-glob#readme)
+### [glob](https://github.com/isaacs/node-glob#readme)
 
 node 的 glob 模块允许你使用 \* 等符号，来写一个 glob 规则，像在 shell 里一样，获取匹配对应规则的文件。glob 工具是基于 JavaScript 的，它使用了 minimatch 库来进行匹配。
 
