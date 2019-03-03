@@ -120,11 +120,77 @@ glob.sync(pathVars.srcPath + "/pages/loginRegister/*/index.html");
   }
   ```
 
+* 字符串去除两边的空格用 `trim()`
 
-- 字符串去除两边的空格用 `trim()`
-- 使用 js 添加 css 属性时后面注意加上单位
-- `introduce` 可用于判断原型链
-- 一个循环数字可使用模赋值运算 `%` 来控制循环数字大小
+* 使用 js 添加 css 属性时后面注意加上单位
+
+* `introduce` 可用于判断原型链
+
+* 一个循环数字可使用模赋值运算 `%` 来控制循环数字大小
+
+* 获取当前页面的滚动条使用 `document.documentElement.scrollTop` , 而不是 `document.body.scrollTop` , `documentElement` 对应的是 html 标签 , 而 body 对应的是 body 标签。
+
+* 网页屏幕相关属性
+
+* ```js
+  网页可见区域宽: document.body.clientWidth;
+  网页可见区域高: document.body.clientHeight;
+  网页可见区域宽: document.body.offsetWidth;
+  网页可见区域高: document.body.offsetHeight;
+  网页正文全文宽: document.body.scrollWidth;
+  网页正文全文高: document.body.scrollHeight;
+  网页被卷去的高: document.body.scrollTop;
+  网页被卷去的左: document.body.scrollLeft;
+  网页正文部分上: window.screenTop;
+  网页正文部分左: window.screenLeft;
+  屏幕分辨率的高: window.screen.height;
+  屏幕分辨率的宽: window.screen.width;
+  屏幕可用工作区高度: window.screen.availHeight;
+  屏幕可用工作区宽度: window.screen.availWidth;
+  ```
+
+* 高度和坐标相关属性 clientHeight、offsetHeight、scrollHeight、offsetTop、scrollTop。
+
+* 点击事件相关坐标
+
+  ```js
+  event.clientX 相对文档的水平座标
+  event.clientY 相对文档的垂直座标
+  event.offsetX 相对容器的水平坐标
+  event.offsetY 相对容器的垂直坐标
+  ```
+
+* 无限滚动实现
+
+  ```js
+  document.body.onscroll = function() {
+    var t = document.documentElement.scrollTop || document.body.scrollTop;
+    var h =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    if (t >= document.documentElement.scrollHeight - h) {
+      // do something
+    }
+  };
+  ```
+
+* 定位鼠标相对于页面的绝对位置
+
+  ```js
+  if (document.body && document.body.scrollTop && document.body.scrollLeft) {
+    top = document.body.scrollTop;
+    left = document.body.scrollleft;
+  }
+  if (
+    document.documentElement &&
+    document.documentElement.scrollTop &&
+    document.documentElement.scrollLeft
+  ) {
+    top = document.documentElement.scrollTop;
+    left = document.documentElement.scrollLeft;
+  }
+  ```
 
 ## 算法
 
