@@ -215,6 +215,9 @@ Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开�
 - [MDN - Web 开发者文档](https://developer.mozilla.org/zh-CN/)
 - [维基百科](https://www.wikipedia.org/)
 - [绘图软件](https://affinity.serif.com/zh-cn/designer/)
+- [在线调试工具](https://jsfiddle.net/)
+- [common.js 介绍](http://javascript.ruanyifeng.com/nodejs/module.html)
+- [fis3 百度自动化管理工具](http://fis.baidu.com/fis3/index.html)
 
 ## Linux
 
@@ -235,4 +238,7 @@ Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开�
   ```
 
 - `:last-of-type` 选择器
+
 - `prefixfree.js` 增加 css 各种后缀
+
+- `autoprefixer` css 兼容工具
