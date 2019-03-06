@@ -1,45 +1,4 @@
-问题  采集数据时开监听  云适配oa 审批页面 申请日期等时异步加载的 直接采集找不到数据的 要一直监控  不开找不到页面元素
-==================
-去除字符串两边的空格  trim（）；
-==================
-用jQuery绑定的事件 不能用平常的HTML事件 onchange()等触发  要使用jQuery的trigger()等方法
-==================
-React传值onClick={this.handleClick.bind(this,i)}    接收使用handleClick:function(i){}
 
-<button onClick={this.handleClick.bind(this, props0, props1, ...}></button>
-handleClick(porps0, props1, ..., event) {
-    // your code here
-}
-==================
-Century ；Bookman Old Style ；字体
-Consolas
-==================
-select 多选问题
-取option index 回调 当前index的option选项selected
-==================
-elem.dispatchEvent(new Event('input'))
-elem.ownerDocument.defaultView找到当前window
-event.initEvent("oneating", true, true);  
-document.dispatchEvent(event);  
-==================
-移动端事件  touchstart，touchend，touchmove
-移动端获取位置e.touches[0].pageX/Y
-==================
--webkit-appearance:none;
-修改checkbox默认样式
-==================
-react 属性 readonly变成readOnly  等等等...
-==================
-react render  中不能用setState
-==================
-js  禁止鼠标拖动  
-ondragstart="return false"
-==================
- event 事件信息  http://www.cnblogs.com/coolicer/archive/2010/10/04/1842653.html
-==================
-clientHeight,scrollHeight,offsetHeight,scrollTop,offsetTop概念
-http://www.cnblogs.com/zourong/p/4049012.html
-==================
 复杂遍历用递归解决!
 demo:
   function recursion(elems) {

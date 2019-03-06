@@ -192,6 +192,11 @@ glob.sync(pathVars.srcPath + "/pages/loginRegister/*/index.html");
   }
   ```
 
+- `jQuery` 的 `trigger` 方法可以触发许多浏览器事件
+- 修改 `select` 标签的选中项可以使用 `selectIndex` 
+- 移动端事件 `touchstart`，`touchend`，`touchmove`，移动端获取位置 `e.touches[0].pageX/Y`
+- 禁止鼠标拖动 `ondragstart="return false"`
+
 ## 算法
 
 - 二分查找
@@ -218,6 +223,8 @@ Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开�
 - [在线调试工具](https://jsfiddle.net/)
 - [common.js 介绍](http://javascript.ruanyifeng.com/nodejs/module.html)
 - [fis3 百度自动化管理工具](http://fis.baidu.com/fis3/index.html)
+- [event 事件信息](http://www.cnblogs.com/coolicer/archive/2010/10/04/1842653.html)
+- [元素宽高概念](http://www.cnblogs.com/zourong/p/4049012.html)
 
 ## Linux
 
@@ -242,3 +249,5 @@ Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开�
 - `prefixfree.js` 增加 css 各种后缀
 
 - `autoprefixer` css 兼容工具
+
+- `-webkit-appearance: none` 修改 `checkbox` 默认样式
