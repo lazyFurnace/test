@@ -193,9 +193,39 @@ glob.sync(pathVars.srcPath + "/pages/loginRegister/*/index.html");
   ```
 
 - `jQuery` 的 `trigger` 方法可以触发许多浏览器事件
-- 修改 `select` 标签的选中项可以使用 `selectIndex` 
+
+- 修改 `select` 标签的选中项可以使用 `selectIndex`
+
 - 移动端事件 `touchstart`，`touchend`，`touchmove`，移动端获取位置 `e.touches[0].pageX/Y`
+
 - 禁止鼠标拖动 `ondragstart="return false"`
+
+- 获取图片 `base64` 码
+
+  ```js
+  function getBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL;
+  }
+  ```
+
+- 清除浏览器缓存 `chrome://appcache-internals/`
+
+- 简单柯里化
+
+  ```js
+  Function.prototype.currying = function(text) {
+    var that = this;
+    return function(name) {
+      that.apply(null, [text, name]);
+    };
+  };
+  ```
 
 ## 算法
 
@@ -251,3 +281,7 @@ Flow 是个 JavaScript 的静态类型检查工具，由 Facebook 出品的开�
 - `autoprefixer` css 兼容工具
 
 - `-webkit-appearance: none` 修改 `checkbox` 默认样式
+
+- 选择器 `+` `~` 都很好用
+
+- `pointer-events: none` 禁用事件
