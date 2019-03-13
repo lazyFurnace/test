@@ -1,29 +1,3 @@
-/*
-var start_X, start_Y, posi;
-var tar = document.getElementById("mouse");
-tar.onmousedown = function(e) {
-  posi = tar.style.marginLeft;
-  start_X = e.clientX;
-  tar.addEventListener("mousemove", listGo);
-};
-tar.onmouseup = function(e) {
-  tar.removeEventListener("mousemove", listGo);
-};
-tar.onmouseout = function() {
-  tar.removeEventListener("mousemove", listGo);
-};
-function listGo(e) {
-  tar.style.marginLeft = parseInt(posi) + e.clientX - start_X + "px";
-}
-tar.addEventListener("touchstart", function(e) {
-  posi = tar.style.marginLeft;
-  start_X = e.touches[0].pageX;
-});
-tar.addEventListener("touchmove", function(e) {
-  tar.style.marginLeft = parseInt(posi) + e.touches[0].pageX - start_X + "px";
-});
-*/
-
 function drag(elem) {
   let params = {};
   if (elem instanceof HTMLElement) {
@@ -31,12 +5,12 @@ function drag(elem) {
       offsetX: null,
       offsetY: null
     };
-    elem.style.position = "absolute";
-    elem.style.left = "0px";
-    elem.style.top = "0px";
+    elem.style.transform = "translate(0px, 0px)";
     elem.addEventListener("mousedown", e => {
       params.offsetX = e.offsetX;
       params.offsetY = e.offsetY;
+      initializationCss();
+      dragMouseMove(e);
       document.addEventListener("mousemove", dragMouseMove);
     });
     elem.addEventListener("mouseup", e => {
@@ -45,11 +19,41 @@ function drag(elem) {
     elem.addEventListener("mouseout", e => {
       document.removeEventListener("mousemove", dragMouseMove);
     });
+    elem.addEventListener("touchstart", e => {
+      const [{ pageX, pageY }] = e.touches;
+      const { top, left } = getOffset(elem);
+      params.offsetX = pageX - left;
+      params.offsetY = pageY - top;
+      initializationCss();
+      dragTouchMove(e);
+      document.addEventListener("touchmove", dragTouchMove);
+    });
+    elem.addEventListener("touchend", e => {
+      document.removeEventListener("touchmove", dragTouchMove);
+    });
   } else {
     throw new Error("绑定元素非 DOM 元素。")
   }
   function dragMouseMove(e) {
     elem.style.left = e.pageX - params.offsetX + "px";
     elem.style.top = e.pageY - params.offsetY + "px";
+  }
+  function dragTouchMove(e) {
+    const [{ pageX, pageY }] = e.touches;
+    elem.style.left = pageX - params.offsetX + "px";
+    elem.style.top = pageY - params.offsetY + "px";
+  }
+  function getOffset(elem, top = 0, left = 0) {
+    top += elem.offsetTop;
+    left += elem.offsetLeft;
+    if (elem.offsetParent) {
+      return getOffset(elem.offsetParent, top, left);
+    } else {
+      return { top, left };
+    }
+  }
+  function initializationCss() {
+    elem.style.position = "absolute";
+    elem.style.margin = 0;
   }
 }
