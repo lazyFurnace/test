@@ -1,5 +1,5 @@
 # test - 这个包用于各种测试或放未整理的东西...
-
+/* eslint-disable */
 ## 问题
 cocos <br>
 react 项目结合 cocos 注意 react 组件销毁时 如果有 其中带有 cocos 的 canvas 销毁之前先 remove 并保存下来 再次使用时 appendChild 添加上 <br>
