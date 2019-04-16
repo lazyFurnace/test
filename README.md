@@ -1,6 +1,46 @@
 # test - 这个包用于各种测试或放未整理的东西...
 /* eslint-disable */
 ## 问题
+
+```js
+export const browserHistory = createBrowserHistory()
+// 获取当前 session 中的历史栈
+const sessionHistoryQueue = JSON.parse(sessionStorage.getItem('historyQueue'))
+// 获取当前浏览器路径地址
+const nowBrowserHistory = browserHistory.location.pathname
+if (sessionHistoryQueue) {
+  // 获取历史栈中的最后一个
+  const lastSessionHistory = sessionHistoryQueue[sessionHistoryQueue.length - 1]
+  // 如果历史栈中最后一个与当前浏览器地址不同
+  if (lastSessionHistory !== nowBrowserHistory) {
+    sessionHistoryQueue.push(nowBrowserHistory)
+  }
+  sessionStorage.setItem('historyQueue', JSON.stringify(sessionHistoryQueue))
+} else {
+  // 将所有历史栈信息存入 historyQueue 中
+  sessionStorage.setItem('historyQueue', JSON.stringify([nowBrowserHistory]))
+}
+
+// 绑定历史栈监听
+browserHistory.listen((location, action) => {
+  // 获取当前 session 中的历史栈
+  const sessionHistoryQueue = JSON.parse(sessionStorage.getItem('historyQueue'))
+  const historyType = {
+    REPLACE: ({pathname}) => {
+      sessionHistoryQueue.pop()
+      sessionHistoryQueue.push(pathname)
+    },
+    POP: () => {
+      sessionHistoryQueue.pop()
+    },
+    PUSH: ({pathname}) => {
+      sessionHistoryQueue.push(pathname)
+    }
+  }
+  historyType[action] && historyType[action](location)
+  sessionStorage.setItem('historyQueue', JSON.stringify(sessionHistoryQueue))
+})
+```
 cocos <br>
 react 项目结合 cocos 注意 react 组件销毁时 如果有 其中带有 cocos 的 canvas 销毁之前先 remove 并保存下来 再次使用时 appendChild 添加上 <br>
 json-rpc 客户端通信 <br>
