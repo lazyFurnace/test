@@ -1,7 +1,7 @@
 # test - 这个包用于各种测试或放未整理的东西...
 /* eslint-disable */
 ## 问题
-
+touch-action 安卓兼容问题
 ```js
 export const browserHistory = createBrowserHistory()
 // 获取当前 session 中的历史栈
