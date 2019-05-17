@@ -1,0 +1,33 @@
+.dialog {
+  .dialog-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #333;
+    opacity: 0.7;
+  }
+  .dialog-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    text-align: center;
+    white-space: nowrap;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      width: 0;
+    }
+    .dialog-body-container {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+    }
+  }
+}
