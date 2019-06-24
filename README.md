@@ -1,5 +1,22 @@
 # test - 这个包用于各种测试或放未整理的东西...
 
+## moment
+
+```js
+moment(openTime).format('MMMDo(dddd)') // - 6月24日(星期一)
+moment(openTime).format('HH:mm') + '-' + moment(closeTime).format('HH:mm') // - 09:00-09:30
+moment(openTime).format('YYYY-MM-DD(周dd)') // - 2019-06-24(周一)
+moment(openTime).calendar(null, {
+  sameDay: '[今天]',
+  nextDay: '[明天]',
+  nextWeek: '[本周]dd',
+  lastDay: '[昨天]',
+  lastWeek: '[本周]dd',
+  sameElse: 'MM月DD日'
+});
+moment(item.phaseBeginTime).format('YYYY年MM月') // - 2018年8月
+```
+
 git revert origin/feature/JAR-123 -m 1 <br>
 /* eslint-disable */
 ## 问题
