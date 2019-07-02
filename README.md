@@ -1,5 +1,33 @@
 # test - 这个包用于各种测试或放未整理的东西...
 
+## 各个设备上适配 audio 标签问题
+安卓上出得问题很多
+解决方法 1: 使用 source 加载文件
+```html
+<audio>
+  <source />
+</audio>
+```
+解决方法 2: 使用 xhr 加载文件，转换为 blob
+```js
+const request = new XMLHttpRequest()
+request.open('GET', src, true)
+request.responseType = 'blob'
+request.onload = function() {
+  if (this.status === 200) {
+    $this.setState({
+        src: URL.createObjectURL(this.response)
+    })
+  }
+}
+request.send()
+```
+解决方法 3: 手动赋值给 src 然后 load
+```js
+this.props.onRef.current.src = $this.props.src
+this.props.onRef.current.load()
+```
+
 
 适配方案 vw 加 rem
 ## moment
