@@ -1,7 +1,11 @@
 # test - 这个包用于各种测试或放未整理的东西...
 
+async await 配合 Promise.all race 使用
+await Promise.all([])
+
 ## 各个设备上适配 audio 标签问题
-安卓上出得问题很多
+
+安卓上出得问题很多 <br>
 解决方法 1: 使用 source 加载文件
 ```html
 <audio>
