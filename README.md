@@ -2,6 +2,7 @@
 
 async await 配合 Promise.all race 使用
 await Promise.all([])
+this 有问题
 
 ## 各个设备上适配 audio 标签问题
 
