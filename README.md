@@ -38,6 +38,11 @@ this.props.onRef.current.load()
 ## moment
 
 ```js
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.updateLocale('zh-cn', {
+  weekdays: ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+});
 moment(openTime).format('MMMDo(dddd)') // - 6月24日(星期一)
 moment(openTime).format('HH:mm') + '-' + moment(closeTime).format('HH:mm') // - 09:00-09:30
 moment(openTime).format('YYYY-MM-DD(周dd)') // - 2019-06-24(周一)
