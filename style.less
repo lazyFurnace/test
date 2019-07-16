@@ -1,0 +1,33 @@
+.rolling-container {
+  height: 559px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  .button {
+    width: 58px;
+    height: 96px;
+    background: #44478e;
+    // opacity: 0.4;
+    position: fixed;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-50%);
+    background-size: 46px 26px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-image: url(https://asset.txqn.huohua.cn/image/11654028-de95-45cd-9677-e8dc02a32375.svg);
+    border-top-left-radius: 58px;
+    border-bottom-left-radius: 58px;
+  }
+  .btn-left {
+    left: -2px;
+    transform: rotateZ(180deg) translateY(50%);
+  }
+  .btn-right {
+    right: 0;
+  }
+}
+.rolling-visibility {
+  visibility: hidden;
+}
