@@ -38,6 +38,15 @@ this.props.onRef.current.load()
 ## moment
 
 ```js
+const handlerBirthday = birthday => {
+  if (isNaN(birthday)) return false
+  // 得到一共多少个月
+  let age = moment().diff(moment(birthday), 'months')
+  // 算出X岁X月
+  age = (parseInt(age / 12) ? `${parseInt(age / 12)}岁` : '') + (age % 12 ? `${age % 12}个月` : '')
+  // 返回 'XXXX年XX月 X岁X月'
+  return `${moment(birthday).format('LL')} ${age}`
+}
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 moment.updateLocale('zh-cn', {
