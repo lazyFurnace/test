@@ -1,5 +1,7 @@
 # test - 这个包用于各种测试或放未整理的东西...
 
+document.addEventListener('touchstart', function () {}); // 解决ios系统:active失效的问题 js添加
+
 async await 配合 Promise.all race 使用
 await Promise.all([])
 this 有问题
