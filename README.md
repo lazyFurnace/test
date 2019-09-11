@@ -1,5 +1,5 @@
 # test - 这个包用于各种测试或放未整理的东西...
-javacript:void(0) <br>
+javacript:void(0) 配合事件执行会取消请求<br>
 async await 配合 Promise.all race 使用
 await Promise.all([])
 this 有问题
