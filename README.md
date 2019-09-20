@@ -322,47 +322,6 @@ export default class App extends React.Component {
 - ll  不知道
 
 
-
-
-
-### 根目录 
-
-#### app.json
-- pages - 小程序中所有的页面
-- window - 页面顶部颜色等设置
-- [配置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
-
-#### project.config.json
+- [小程序配置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
 - [配置微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
-
-### 模板使用
-```
-<button wx:if="{{!hasUserInfo && canIUse}}"> 获取头像昵称 </button>
-<block wx:else>
-  <image src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-</block>
-```
-
-### 事件
-wxml
-```
-<view>{{ msg }}</view>
-<button bindtap="clickMe">点击我</button>
-```
-js
-```
-page({
-  clickMe: function() {
-    this.setData({
-      msg: 'hello world'
-    })
-  }
-})
-```
-
-### 生命周期
-onLaunch - 小程序启动之后触发
-
-
 
