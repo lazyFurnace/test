@@ -7,6 +7,29 @@ webpack 配置打包 library libraryTarget
 react-transtion-group 使用后 resume 问题总结
 内存历史记录
 护眼模式
+```jsx
+import pako from 'pako';
+
+export function zip(str) {
+  var binaryString = pako.gzip(encodeURIComponent(str), {to: 'string'});
+  return btoa(binaryString);
+}
+
+export function unzip(b64Data) {
+  var strData = atob(b64Data);
+  // Convert binary string to character-number array
+  var charData = strData.split('').map(function(x) {
+    return x.charCodeAt(0);
+  });
+  // Turn number array into byte-array
+  var binData = new Uint8Array(charData);
+  // // unzip
+  var data = pako.inflate(binData);
+  // Convert gunzipped byteArray back to ascii string:
+  strData = String.fromCharCode.apply(null, new Uint16Array(data));
+  return decodeURIComponent(strData);
+}
+```
 
 
 ## 各个设备上适配 audio 标签问题
