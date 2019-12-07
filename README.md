@@ -1,4 +1,25 @@
 # test - 这个包用于各种测试或放未整理的东西...
+触摸事件判断 - 出自 hammer.js -> touchmouse.js
+```js
+if (isMouse && inputData.sourceCapabilities && inputData.sourceCapabilities.firesTouchEvents) {
+  return;
+}
+function isSyntheticEvent(eventData) {
+  let x = eventData.srcEvent.clientX;
+  let y = eventData.srcEvent.clientY;
+  for (let i = 0; i < this.lastTouches.length; i++) {
+    let t = this.lastTouches[i];
+    let dx = Math.abs(x - t.x);
+    let dy = Math.abs(y - t.y);
+    if (dx <= DEDUP_DISTANCE && dy <= DEDUP_DISTANCE) {
+      return true;
+    }
+  }
+  return false;
+}
+
+```
+<br>
 javacript:void(0) 配合事件执行会取消请求<br>
 async await 配合 Promise.all race 使用
 await Promise.all([])
