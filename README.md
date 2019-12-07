@@ -17,22 +17,24 @@ function isSyntheticEvent(eventData) {
   }
   return false;
 }
-
 ```
-<br>
+
 javacript:void(0) 配合事件执行会取消请求<br>
 async await 配合 Promise.all race 使用
 await Promise.all([])
 this 有问题
+
 ```js
 export const reduceModifier = modifier => Component => {
   return modifier.reduce((total, currentValue) => currentValue(total), Component);
 };
 ```
+
 webpack 配置打包 library libraryTarget
 react-transtion-group 使用后 resume 问题总结
 内存历史记录
 护眼模式
+
 ```jsx
 import pako from 'pako';
 
@@ -56,7 +58,6 @@ export function unzip(b64Data) {
   return decodeURIComponent(strData);
 }
 ```
-
 
 ## 各个设备上适配 audio 标签问题
 
