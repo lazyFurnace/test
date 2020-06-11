@@ -1,4 +1,13 @@
 
+美国标准时间 / 夏令时 相差一个小时 改时差未处理情况下 使用 setFullYear 导致 误差一小时 00:00 -> 23:00  导致 23个小时误差
+          // 本地初始零点日期
+          const zeroTime = new Date(new Date(0).getTimezoneOffset() * 60 * 1000);
+          // 本地开课零点日期
+          let resTime = zeroTime.setFullYear(open_year, open_month - 1, open_day);
+          
+          <br/>
+
+
 1 如果分割符是正则表达式, split 会检测 正则表达式 中是否有小括号() , 小括号中的内容会输出到数组中,如果不想输出到数组中, 请使用正则 **(?:x)**字符;
 2 如果分隔符出现在字符串的开头或结尾,那么数组的开头或结尾会分割出空字符
 
