@@ -1,3 +1,8 @@
+Looks like adding a ~/.huskyrc file with:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 replace(/[^a-zA-Z]/ig, '')
 
 
