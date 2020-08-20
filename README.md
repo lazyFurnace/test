@@ -1,9 +1,24 @@
+
+// function getFileURL(file) {
+//   let getUrl = '';
+//   getUrl = window.webkitURL.createObjectURL(file);
+//   return getUrl;
+// }
+
+<br>
+
+
+
+
+
 Looks like adding a ~/.huskyrc file with:
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 replace(/[^a-zA-Z]/ig, '')
+
+<br>
 
 
 美国标准时间 / 夏令时 相差一个小时 改时差未处理情况下 使用 setFullYear 导致 误差一小时 00:00 -> 23:00  导致 23个小时误差
