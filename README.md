@@ -1,4 +1,6 @@
-import { extname } from 'path';
+```typescript
+// ts 类型
+import { extname } from "path";
 
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 interface Action<T> {
@@ -8,19 +10,19 @@ interface Action<T> {
 
 class EffectModule {
   count = 1;
-  message = 'hello!';
+  message = "hello!";
 
   delay(input: Promise<number>) {
     return input.then((i) => ({
       payload: `hello ${i}!`,
-      type: 'delay',
+      type: "delay",
     }));
   }
 
   setMessage(action: Action<Date>) {
     return {
       payload: action.payload!.getMilliseconds(),
-      type: 'set-message',
+      type: "set-message",
     };
   }
 }
@@ -34,11 +36,11 @@ type c = C<EffectModule>;
 
 const connect: Connect = (m) => ({
   delay: (input: number) => ({
-    type: 'delay',
+    type: "delay",
     payload: `hello 2`,
   }),
   setMessage: (input: Date) => ({
-    type: 'set-message',
+    type: "set-message",
     payload: input.getMilliseconds(),
   }),
 });
@@ -49,46 +51,39 @@ interface Connected {
 }
 
 export const connected = connect(new EffectModule());
-  
+```
 
+```typescript
+// blob url 转换
+function getFileURL(file) {
+  let getUrl = '';
+  getUrl = window.webkitURL.createObjectURL(file);
+  return getUrl;
+}
+```
 
-
-
-// function getFileURL(file) {
-//   let getUrl = '';
-//   getUrl = window.webkitURL.createObjectURL(file);
-//   return getUrl;
-// }
-
-<br>
-
-
-
-
-
-Looks like adding a ~/.huskyrc file with:
-
+### husky nvm 配置
+```shell
+# Looks like adding a ~/.huskyrc file with:
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+```
 
+```javascript
 replace(/[^a-zA-Z]/ig, '')
+```
 
-<br>
+```javascript
+//美国标准时间
+// 夏令时 相差一个小时 改时差未处理情况下 使用 setFullYear 导致 误差一小时 00:00 -> 23:00  导致 23个小时误差
+// 本地初始零点日期
+const zeroTime = new Date(new Date(0).getTimezoneOffset() * 60 * 1000);
+// 本地开课零点日期
+let resTime = zeroTime.setFullYear(open_year, open_month - 1, open_day);
+```
 
-
-美国标准时间 / 夏令时 相差一个小时 改时差未处理情况下 使用 setFullYear 导致 误差一小时 00:00 -> 23:00  导致 23个小时误差
-          // 本地初始零点日期
-          const zeroTime = new Date(new Date(0).getTimezoneOffset() * 60 * 1000);
-          // 本地开课零点日期
-          let resTime = zeroTime.setFullYear(open_year, open_month - 1, open_day);
-          
-          <br/>
-
-
-1 如果分割符是正则表达式, split 会检测 正则表达式 中是否有小括号() , 小括号中的内容会输出到数组中,如果不想输出到数组中, 请使用正则 **(?:x)**字符;
-2 如果分隔符出现在字符串的开头或结尾,那么数组的开头或结尾会分割出空字符
-
-
+- 如果分割符是正则表达式, split 会检测 正则表达式 中是否有小括号() , 小括号中的内容会输出到数组中,如果不想输出到数组中, 请使用正则 **(?:x)**字符;  
+- 如果分隔符出现在字符串的开头或结尾,那么数组的开头或结尾会分割出空字符
 
 # test - 这个包用于各种测试或放未整理的东西...
 触摸事件判断 - 出自 hammer.js -> touchmouse.js
